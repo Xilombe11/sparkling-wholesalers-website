@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingsley Depot Polokwane | Sparkling Wholesalers</title>
+    <meta name="description" content="Kingsley Depot Polokwane t/a Sparkling Wholesalers. Your one-stop shop for bulk soft drinks, sweets, snacks, spices, charcoal, and pet food at wholesale prices.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --accent-cyan: #00c6ff;
+            --dark-blue: #003366;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --bg-light: #f4f8fb;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section { padding: 100px 0; }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .section-title .divider {
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        /* RESPONSIVE BUTTONS */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            width: auto; 
+            max-width: 100%;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 86, 179, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo span {
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            letter-spacing: 1.5px;
+        }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 3px; background: var(--accent-cyan);
+            transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary-blue); }
+        
+        .nav-contact { display: flex; align-items: center; gap: 20px; }
+        .nav-contact a {
+            font-weight: 700; color: var(--primary-blue);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark-blue); }
+
+        /* Hero */
+        .hero {
+            height: 100vh; min-height: 700px;
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.75)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            display: flex; align-items: center; text-align: center;
+            color: var(--white); padding-top: 80px;
+        }
+        .hero-content { max-width: 900px; margin: 0 auto; animation: fadeIn 1s ease; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px; border-radius: 30px;
+            font-weight: 600; letter-spacing: 1px; margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 25px; line-height: 1.1; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        .hero-buttons { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h3 { font-size: 2.2rem; color: var(--dark-blue); margin-bottom: 25px; line-height: 1.3; }
+        .about-text p { margin-bottom: 20px; color: var(--text-light); font-size: 1.05rem; }
+        .highlight-quote {
+            background: var(--bg-light);
+            border-left: 5px solid var(--accent-cyan);
+            padding: 20px; border-radius: 0 10px 10px 0;
+            font-style: italic; margin: 25px 0;
+            color: var(--dark-blue); font-weight: 500;
+        }
+        .about-features { margin-top: 35px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .feature-item { display: flex; align-items: flex-start; gap: 15px; }
+        .feature-item i { color: var(--accent-cyan); font-size: 1.8rem; margin-top: 5px; }
+        .feature-item h4 { font-size: 1.15rem; margin-bottom: 5px; color: var(--dark-blue); }
+        .feature-item p { font-size: 0.95rem; margin-bottom: 0; }
+        
+        .about-image { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); height: 500px; }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .about-image:hover img { transform: scale(1.05); }
+        .experience-badge {
+            position: absolute; bottom: -20px; right: -20px;
+            background: var(--primary-blue); color: var(--white);
+            padding: 30px; border-radius: 50%; text-align: center;
+            box-shadow: var(--shadow); border: 5px solid var(--white);
+        }
+        .experience-badge h4 { font-size: 2rem; margin-bottom: 5px; }
+        .experience-badge p { font-size: 0.9rem; font-weight: 500; }
+
+        /* Wholesale Advantage - Hover Animation */
+        .wholesale { background-color: var(--bg-light); }
+        .wholesale-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .wholesale-card {
+            background: var(--white); padding: 40px; border-radius: 20px;
+            text-align: center; box-shadow: var(--shadow); 
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            border-top: 5px solid var(--accent-cyan);
+            position: relative;
+            z-index: 1;
+        }
+        .wholesale-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 86, 179, 0.15);
+            z-index: 10;
+        }
+        .wholesale-card i { font-size: 3.5rem; color: var(--primary-blue); margin-bottom: 25px; transition: var(--transition); }
+        .wholesale-card:hover i { transform: scale(1.1); color: var(--accent-cyan); }
+        .wholesale-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark-blue); }
+        .wholesale-card p { color: var(--text-light); }
+
+        /* Products / Services */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .product-card {
+            background: var(--white); border-radius: 20px; overflow: hidden;
+            box-shadow: var(--shadow); transition: var(--transition);
+        }
+        .product-card:hover { transform: translateY(-10px); }
+        .product-img { height: 250px; width: 100%; object-fit: cover; }
+        .product-info { padding: 30px; }
+        .product-info h3 { font-size: 1.4rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .product-info p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
+        .product-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .product-tags span {
+            background: var(--bg-light); color: var(--primary-blue);
+            padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { border-radius: 15px; overflow: hidden; position: relative; height: 280px; box-shadow: var(--shadow); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: var(--white); opacity: 0; transition: var(--transition);
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* Reviews */
+        .reviews { background-color: var(--dark-blue); color: var(--white); }
+        .reviews .section-title h2 { color: var(--white); }
+        .reviews .section-title p { color: rgba(255,255,255,0.8); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .review-card {
+            background: rgba(255, 255, 255, 0.1); padding: 35px;
+            border-radius: 20px; backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .review-stars { color: #ffc107; margin-bottom: 20px; font-size: 1.1rem; }
+        .review-text { font-style: italic; margin-bottom: 25px; font-size: 1rem; line-height: 1.7; }
+        .review-author { font-weight: 700; display: flex; align-items: center; gap: 12px; font-size: 1.05rem; }
+        .review-author i { color: var(--accent-cyan); font-size: 1.5rem; }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+        .contact-info h3 { font-size: 2rem; color: var(--dark-blue); margin-bottom: 30px; }
+        .contact-item { display: flex; gap: 25px; margin-bottom: 30px; }
+        .contact-item i {
+            font-size: 1.8rem; color: var(--accent-cyan);
+            background: rgba(0, 198, 255, 0.1);
+            width: 60px; height: 60px; display: flex;
+            align-items: center; justify-content: center;
+            border-radius: 15px; flex-shrink: 0;
+        }
+        .contact-item h4 { font-size: 1.2rem; margin-bottom: 5px; color: var(--dark-blue); }
+        .contact-item p { color: var(--text-light); margin-bottom: 0; font-size: 1.05rem; }
+        .contact-item a { color: var(--primary-blue); font-weight: 700; font-size: 1.1rem; }
+        
+        .map-container { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); height: 100%; min-height: 450px; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* Footer */
+        footer { background: #001a33; color: rgba(255,255,255,0.7); padding: 60px 0 30px; text-align: center; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 30px; }
+        .footer-logo { font-size: 1.8rem; font-weight: 700; color: var(--white); }
+        .footer-logo span { color: var(--accent-cyan); font-size: 1rem; display: block; }
+        .footer-links a { margin-left: 25px; transition: var(--transition); font-weight: 500; }
+        .footer-links a:hover { color: var(--accent-cyan); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .about-grid, .contact-grid, .wholesale-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .about-image { order: -1; height: 350px; }
+            .experience-badge { bottom: 20px; right: 20px; padding: 20px; }
+            .wholesale-card { margin-bottom: 15px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 80px; left: -100%; width: 100%;
+                height: calc(100vh - 80px); background: var(--white);
+                flex-direction: column; align-items: center; justify-content: center;
+                transition: var(--transition); box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { left: 0; }
+            .hamburger { display: block; }
+            .nav-contact { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            
+            .hero-buttons { 
+                flex-direction: column; 
+                gap: 15px; 
+                width: 100%;
+                padding: 0 10px;
+            }
+            .btn { 
+                width: 100%; 
+                white-space: normal; 
+                padding: 15px 20px;
+            }
+            
+            .section-title h2 { font-size: 2.2rem; }
+            .footer-content { flex-direction: column; gap: 20px; }
+            .footer-links a { margin: 0 10px; display: block; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                Kingsley Depot <span>Sparkling Wholesalers</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#wholesale">Why Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="tel:0846069197"><i class="fas fa-phone-alt"></i> 084 606 9197</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">WHOLESALE & BULK SUPPLIER</div>
+                <h1>Stock Up & Save Big at Polokwane's Premier Depot</h1>
+                <p>From soft drinks and sweets to spices, charcoal, and pet food. We supply tuckshops, caterers, and the public with everything you need at unbeatable wholesale prices.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">View Our Range</a>
+                    <!-- FIXED: Changed to btn-primary so the button is clearly visible against the dark background -->
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=15+Ranwedzi+Street,+Magna+Via,+Polokwane,+0699" target="_blank" class="btn btn-primary">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Everything You Need, All Under One Roof</h3>
+                    <p>Welcome to <strong>Kingsley Depot Polokwane t/a Sparkling Wholesalers</strong>. We are more than just a soft drink shop. We are a comprehensive wholesale destination located at 15 Ranwedzi Street, Magna Via, Polokwane.</p>
+                    
+                    <div class="highlight-quote">
+                        "Excellent and friendly service, come here for the best prices for any sweet tooth. After visiting here, you'll need a small truck, come prepared to fully enjoy the specials on offer." — <em>Stefan de Beer (Google Review)</em>
+                    </div>
+                    
+                    <p>Whether you are running a spaza shop, planning a massive party, or just doing your monthly grocery shopping, our massive warehouse is packed to the brim with quality products. We pride ourselves on our friendly staff, excellent service, and the sheer volume of stock we carry.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-boxes"></i>
+                            <div>
+                                <h4>Bulk Quantities</h4>
+                                <p>Buy by the box, pallet, or single unit.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tags"></i>
+                            <div>
+                                <h4>Wholesale Pricing</h4>
+                                <p>Get the best margins for your business.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Friendly Staff</h4>
+                                <p>Always helpful and ready to assist you.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wheelchair"></i>
+                            <div>
+                                <h4>Fully Accessible</h4>
+                                <p>Wheelchair-friendly entrance & parking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop" alt="Kingsley Depot Warehouse">
+                    <div class="experience-badge">
+                        <h4>4.5★</h4>
+                        <p>69 Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesale Advantage -->
+    <section id="wholesale" class="wholesale">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Wholesale Advantage</h2>
+                <p>Why businesses and families across Polokwane choose Sparkling Wholesalers.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="wholesale-grid">
+                <div class="wholesale-card">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Massive Variety</h3>
+                    <p>From Dragon Energy and Switch drinks to Simba chips, Mr. Spices, and Pride Charcoal. We stock everything you need for retail or catering.</p>
+                </div>
+                <div class="wholesale-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Unbeatable Prices</h3>
+                    <p>Our customers consistently rate us 5 stars for our extremely competitive pricing. Get more for your money with our bulk specials.</p>
+                </div>
+                <div class="wholesale-card">
+                    <i class="fas fa-store"></i>
+                    <h3>One-Stop Shop</h3>
+                    <p>Don't drive around town. Get your cold drinks, sweets, groceries, spices, and even your cat and dog food all in one trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products / Services -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Sell</h2>
+                <p>Explore our extensive range of wholesale products.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop" alt="Soft Drinks and Energy Drinks" class="product-img">
+                    <div class="product-info">
+                        <h3>Soft Drinks & Energy</h3>
+                        <p>We stock massive pallets of carbonated drinks, juices, water, and energy drinks to keep your shelves full.</p>
+                        <div class="product-tags">
+                            <span>Dragon Energy</span>
+                            <span>Switch</span>
+                            <span>Azzurro</span>
+                            <span>Bottled Water</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=800&auto=format&fit=crop" alt="Sweets and Snacks" class="product-img">
+                    <div class="product-info">
+                        <h3>Sweets & Snacks</h3>
+                        <p>A paradise for any sweet tooth. We carry a vast selection of chips, candies, chocolates, and biscuits.</p>
+                        <div class="product-tags">
+                            <span>Simba Chips</span>
+                            <span>Crave</span>
+                            <span>Cartoon Jubes</span>
+                            <span>Ama Pops</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop" alt="Spices and Groceries" class="product-img">
+                    <div class="product-info">
+                        <h3>Spices & Groceries</h3>
+                        <p>Essential cooking ingredients and spices to keep your kitchen or catering business running smoothly.</p>
+                        <div class="product-tags">
+                            <span>Mr. Spices</span>
+                            <span>Braai Spice</span>
+                            <span>Fish Spice</span>
+                            <span>Chicken Spice</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=800&auto=format&fit=crop" alt="Charcoal and Braai" class="product-img">
+                    <div class="product-info">
+                        <h3>Charcoal & Braai</h3>
+                        <p>Premium quality charcoal for your weekend braais, events, and outdoor catering.</p>
+                        <div class="product-tags">
+                            <span>Pride Charcoal</span>
+                            <span>Namibian Hardwood</span>
+                            <span>4kg Bags</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="wholesale">
+        <div class="container">
+            <div class="section-title">
+                <h2>Store Gallery</h2>
+                <p>Take a look inside our massive warehouse.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop" alt="Warehouse Racks">
+                    <div class="gallery-overlay"><h4>Massive Inventory</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=800&auto=format&fit=crop" alt="Water Pallets">
+                    <div class="gallery-overlay"><h4>Beverage Pallets</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=800&auto=format&fit=crop" alt="Candy Rack">
+                    <div class="gallery-overlay"><h4>Candy Selection</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&w=800&auto=format&fit=crop" alt="Chips Aisle">
+                    <div class="gallery-overlay"><h4>Snacks Aisle</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop" alt="Storefront">
+                    <div class="gallery-overlay"><h4>Easy Access</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584225064785-c62a8b43d148?q=80&w=800&auto=format&fit=crop" alt="Energy Drinks">
+                    <div class="gallery-overlay"><h4>Bulk Energy Drinks</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Rated 4.5 Stars based on 69 reviews on Google</p>
+                <div class="divider"></div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Very very cheap! You can get a lot for very little money! Good quality as well. Friendly staff and always helpful. Do all my cooldrink and sweets shopping here."</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i> Justin O'Linsky
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Wow. Excellent service, huge variety. Visit them today! Also stocks cat and dog food!! Love this place and the people!"</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i> Nadia Vickery
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Fast friendly service with good quality products at an affordable price."</p>
+                    <div class="review-author">
+                        <i class="fas fa-user-circle"></i> Hannes Nortje
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Us Today</h2>
+                <p>We look forward to serving you. Come see our specials!</p>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>15 Ranwedzi Street, Magna Via,<br>Polokwane, 0699</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:0846069197">084 606 9197</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Open Daily: Closes at 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <h4>Payments Accepted</h4>
+                            <p>Credit Cards, NFC Mobile Payments, Cash</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; width: 100%;">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=15+Ranwedzi+Street,+Magna+Via,+Polokwane,+0699" target="_blank" class="btn btn-primary" style="width: 100%; display: flex;">Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.239588411685!2d29.42264231536224!3d-23.90358878450258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d2009d4e6d01%3A0x6b6d6b6d6b6d6b6d!2s15%20Ranwedzi%20St%2C%20Magna%20Via%2C%20Polokwane%2C%200699!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Kingsley Depot <span>Sparkling Wholesalers</span></div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#wholesale">Why Us</a>
+                    <a href="#products">Products</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <p>&copy; 2026 Kingsley Depot Polokwane t/a Sparkling Wholesalers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .gallery-item, .review-card, .wholesale-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
